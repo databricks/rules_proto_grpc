@@ -133,6 +133,12 @@ VERSIONS = {
     },
 
     # Doc
+    "protoc_gen_doc_darwin_arm64": {
+        "type": "http",
+        "urls": ["https://github.com/pseudomuto/protoc-gen-doc/releases/download/v1.5.1/protoc-gen-doc_1.5.1_darwin_arm64.tar.gz"],
+        "sha256": "6e8c737d9a67a6a873a3f1d37ed8bb2a0a9996f6dcf6701aa1048c7bd798aaf9",
+        "build_file_content": """exports_files(glob(["protoc-gen-doc*"]))""",
+    },
     "protoc_gen_doc_darwin_x86_64": {
         "type": "http",
         "urls": ["https://github.com/pseudomuto/protoc-gen-doc/releases/download/v1.5.0/protoc-gen-doc-1.5.0.darwin-amd64.go1.16.6.tar.gz"],
@@ -535,6 +541,9 @@ def com_github_dcarp_protobuf_d(**kwargs):
 #
 # Doc
 #
+def protoc_gen_doc_darwin_arm64(**kwargs):
+    _generic_dependency("protoc_gen_doc_darwin_arm64", **kwargs)
+
 def protoc_gen_doc_darwin_x86_64(**kwargs):
     _generic_dependency("protoc_gen_doc_darwin_x86_64", **kwargs)
 
